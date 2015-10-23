@@ -11,7 +11,7 @@ for nsfolder in $( ls ); do
 				then
 					objects=$(<$PWD/$scriptfile)
 					json="{\"Objects\":$objects,\"Parameters\":{\"KeyProperty\":\"$keyprop\"}}"
-					curl -H 'Content-Type: application/json' -H 'securityToken: 123' -H 'log: log' -X POST -d "$json" $1/$nsfolder/$cfolder
+					curl -H 'Content-Type: application/json' -H 'securityToken: 123' -H 'log: log' -X POST -d "$json" "http://$1:3000/$nsfolder/$cfolder"
 					echo " "
 				fi
 			done
